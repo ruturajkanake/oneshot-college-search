@@ -1,0 +1,7 @@
+export const PAGE_LIMIT = 20;
+
+export const CHAR_SET = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+export const COLLEGE_ID_LENGTH = 4;
+
+export const STUDENT_ID_LENGTH = 4;
