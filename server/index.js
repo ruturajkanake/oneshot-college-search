@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
 
-const allowedOrigins = ['http://localhost:3000'];
+const allowedOrigins = ['http://localhost:3000', 'https://ruturaj-college-search.herokuapp.com', 'http://ruturaj-college-search.herokuapp.com'];
 
 app.use(
     cors({
