@@ -8,9 +8,8 @@
     "client": "cd client && npm start",
     "start": "node server/index.js",
     "lint": "eslint . --ext .js",
-    "prettier-format": "prettier --config .prettierrc 'server/**/*.js' --write",
-    "dev": "concurrently -n 'server,client' -c 'green,blue' \"env-cmd -f ./config/dev.env nodemon src/index.js\" \"npm run client\"",
-    "test": "env-cmd -f ./config/test.env jest --watch --runInBand",
+    "prettier-format": "prettier --config .prettierrc '{server/**/*,client/src/**/*}.js' --write",
+    "dev": "concurrently -n 'server,client' -c 'green,blue' \"nodemon --watch server server/index.js\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",

@@ -15,7 +15,11 @@ const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
 
-const allowedOrigins = ['http://localhost:3000', 'https://ruturaj-college-search.herokuapp.com', 'http://ruturaj-college-search.herokuapp.com'];
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://ruturaj-college-search.herokuapp.com',
+    'http://ruturaj-college-search.herokuapp.com'
+];
 
 app.use(
     cors({
@@ -41,7 +45,6 @@ connectFunc(process.env.NODE_ENV === 'production');
 app.use('', dashboardRouter);
 app.use('/college', collegeRouter);
 app.use('/student', studentRouter);
-
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
