@@ -10,8 +10,11 @@ function CollegeDetails(props) {
     const [college, setCollege] = useState(null);
     const [similarColleges, setSimilarColleges] = useState([]);
     useEffect(() => {
+        document.querySelector('body').scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
         const fetchData = async () => {
-            window.scrollTo(0, 0);
             const id = props.match.params.collegeId;
             const collegeRes = await axios.get(`/college/details/${id}`);
             const similarRes = await axios.get(`/college/similar/${id}`);
@@ -120,7 +123,6 @@ function CollegeDetails(props) {
                                 return (
                                     <Link
                                         to={`/college/${similarCollege.id}`}
-                                        onClick={window.scrollTo(0, 0)}
                                     >
                                         <Card
                                             hoverable

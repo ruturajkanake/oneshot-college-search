@@ -40,7 +40,9 @@ export const collegeByCourse = async (course) => {
 };
 
 export const similarColleges = async (collegeId) => {
-    const college = details(collegeId);
+    const id = collegeId.toUpperCase();
+    const college = await College.findOne({ id });
+    if (!college) throw new Error('College not Found');
     const colleges = await College.find({
         id: { $ne: college.id },
         city: college.city,
@@ -73,7 +75,7 @@ export const similarColleges = async (collegeId) => {
         return countryColleges;
     }
     const allColleges = await College.find({
-        id: { $ne: college._id }
+        id: { $ne: college.id }
     }).limit(6 - countryColleges.length);
 
     return [...countryColleges, ...allColleges];
