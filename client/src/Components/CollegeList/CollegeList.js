@@ -154,7 +154,7 @@ function CollegeList(props) {
                         <Select
                             size="large"
                             style={{
-                                width: 350,
+                                width: 280,
                                 marginRight: 10,
                                 marginBottom: 10
                             }}
@@ -191,7 +191,7 @@ function CollegeList(props) {
                         <Select
                             size="large"
                             style={{
-                                width: 350,
+                                width: 280,
                                 marginRight: 10,
                                 marginBottom: 10
                             }}

@@ -80,8 +80,8 @@ function Dashboard(props) {
                 </Link>
             </Row>
             <Row justify="space-around">
-                <Card hoverable style={{ marginBottom: 10 }}>
-                    {Object.keys(coursesOffered).length > 0 && (
+                {Object.keys(coursesOffered).length > 0 && (
+                    <Card hoverable style={{ marginBottom: 10 }}>
                         <div style={styles.charts}>
                             <Title
                                 level={4}
@@ -123,10 +123,11 @@ function Dashboard(props) {
                                 }}
                             />
                         </div>
-                    )}
-                </Card>
-                <Card hoverable style={{ marginBottom: 10 }}>
-                    {Object.keys(collegesByStates).length > 0 && (
+                    </Card>
+                )}
+                
+                {Object.keys(collegesByStates).length > 0 && (
+                    <Card hoverable style={{ marginBottom: 10 }}>
                         <div style={styles.charts}>
                             <Title
                                 level={4}
@@ -168,8 +169,9 @@ function Dashboard(props) {
                                 }}
                             />
                         </div>
-                    )}
-                </Card>
+                    </Card>
+                )}
+                
             </Row>
             {data && (
                 <Row justify="space-around" style={{ marginTop: 20 }}>
