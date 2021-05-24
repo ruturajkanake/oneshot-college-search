@@ -36,10 +36,6 @@ app.use(
     })
 );
 
-// app.get('/', (req, res) => {
-//     res.status(200).json('Welcome to College Search!');
-// });
-
 connectFunc(process.env.NODE_ENV === 'production');
 
 app.use('', dashboardRouter);
